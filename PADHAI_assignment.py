@@ -43,23 +43,47 @@
 #         return 1
 # print(fact(5))
 
-#---------------------Assignment-2(3)---- division func
+#---------------------Assignment-2(3)---- Compute x*n/n!
 
-n=int(input("Enter the value of n : "))
+#n=int(input("Enter the value of n : "))
+# def newfact(n):
+#     if n>1:
+#         return n* newfact(n-1)
+#     else:
+#         return 1
+#
+# def compute_ratio(x,n):
+#     ratio=x**n/newfact(n)
+#     return ratio
+# print(compute_ratio(2,3))
+
+#-----------------Assignment -2(4)----compute x*n/n! upto n
+
 def newfact(n):
     if n>1:
         return n* newfact(n-1)
     else:
         return 1
-j=newfact(n)
 
-x=float(input("Enter float value : "))
-result=float(x*n)
-finalResult=float(result/j)
-print(finalResult)
-result=eval(x*n/j)
-print(result)
-print("Facorial : ",j)
+def compute_ratio(x,n):
+    ratio=x**n/newfact(n)
+    return ratio
+
+def compute_sum(x,N):
+    sum=1
+    for i in range(N):
+        sum+=compute_ratio(x,i+1)
+    return sum
+print(compute_sum(2,3))
+
+
+
+
+
+
+
+
+
 
 
 
